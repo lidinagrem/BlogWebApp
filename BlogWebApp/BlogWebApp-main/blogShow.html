@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="nav container">
+            <a href="/blogShow.html" class="logo">Apollo B<span>log</span></a>
+            <li class="navbar">
+                <a href="/blogShow.html">Home</a>
+                <a href="/map.html">Map</a>
+                <a href="/contact.html">Contact</a>
+            </li>
+            <a href="/blogContentAdd.html" class="editor">
+                <i class='bx bx-edit'></i>
+            </a>
+            <button id="logoutButton" class="login">Logout</button>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text container">
+            <div class="home-title">Apollo Blog</div>
+            <span class="home-subtitle">Your source of great content</span>
+        </div>
+    </section>
+
+    <section class="post container" id="blog-list">
+        <!-- Firebase'den çekilen bloglar burada listelenecek -->
+    </section>
+
+    <section class="footer">
+        <div class="links">
+            <a href="/blogShow.html">Home</a>
+            <a href="/map.html">Map</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+        <p>&copy; 2024 Blog App. All rights reserved.</p>
+    </section>
+
+    <script type="module" src="/js/blogShow.js"></script>
+
+</body>
+
+</html>

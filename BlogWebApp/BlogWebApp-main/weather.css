@@ -1,0 +1,77 @@
+#map {
+    margin: 0 auto;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+#search_area {
+    padding: 30px;
+    border-radius: 100px;
+    background-image: url(weather.jpeg);
+    width: 100%;
+    max-width: 400px;
+    /* Maximum width */
+    margin: 80px auto 20px;
+}
+
+#weather-forecast {
+    width: 100%;
+    max-width: 800px;
+    /* Maximum width */
+    margin: 0 auto;
+    /* Centering */
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 150px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+#weather-results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 40px auto;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+    .weather-block {
+        flex-direction: column;
+        /* Stack items vertically on smaller screens */
+        text-align: center;
+    }
+    .weather-icon {
+        margin-bottom: 10px;
+        /* Space between icon and text on smaller screens */
+    }
+    #search_area,
+    #weather-forecast {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

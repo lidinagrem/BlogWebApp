@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kayıt Ol - Apollo Coffee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <!-- Header içeriği -->
+    </header>
+
+    <div class="form-container">
+        <div id="error-message" style="display: none; color: red;"></div>
+
+        <form id="signupForm" class="form">
+            <h2>Register</h2>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <select id="role" required>
+                <option value="user" selected>User</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button type="submit">Signup</button>
+        </form>
+        <button onclick="location.href='login.html'" class="secondary-button">Login</button>
+    </div>
+    <script type="module" src="/js/signup.js"></script>
+
+</body>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url('https://www.slidebackground.com/uploads/desk/cool-black-desk-desktop-wallpaper-backgrounds.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+</html>

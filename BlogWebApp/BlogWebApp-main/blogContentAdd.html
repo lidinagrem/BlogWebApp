@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo Blog</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/editor.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <div class="nav container">
+                <a href="/blogShow.html" class="logo">Apollo B<span>log</span></a>
+                <li class="navbar">
+                    <a href="/blogShow.html">Home</a>
+                    <a href="/map.html">Map</a>
+                    <a href="/contact.html">Contact</a>
+                </li>
+                <a href="/blogContentAdd.html" class="editor">
+                    <i class='bx bx-edit'></i>
+                </a>
+                <button id="logoutButton" class="login">Logout</button>
+            </div>
+        </header>
+        <div class="banner">
+            <!-- Banner content here -->
+        </div>
+        <main>
+            <h2 class="addTitle"> Share your Post</h2>
+            <br>
+            <div class="blog">
+                <div id="access-denied-message" style="display:none;">
+                    <p>You don't have access to post a blog.</p>
+                </div>
+                <form id="blog-form" style="display:none;">
+                    <textarea type="text" class="title" id="yazar-ad-soyad" placeholder="Author Name..."></textarea>
+                    <textarea type="text" class="title" id="blog-konu" placeholder="Blog Title..."></textarea>
+                    <textarea type="text" class="article" id="blog-yazisi" placeholder="Blog Text..."></textarea>
+                    <input type="file" id="blog-image" accept="image/*">
+                    <button type="submit" class="btn dark publish-btn">Share</button>
+                </form>
+            </div>
+            <div class="blog-options">
+                <!-- Additional blog options here -->
+            </div>
+        </main>
+    </div>
+    <section class="footer">
+        <div class="links">
+            <a href="/blogShow.html">Home</a>
+            <a href="/map.html">Map</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+        <p>&copy; 2024 Blog App. All rights reserved.</p>
+    </section>
+    <script type="module" src="/js/blogAdd.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Forecast Map</title>
+    <link rel="stylesheet" href="/weather.css">
+    <link rel="stylesheet" href="/style.css">
+    <!-- box icons  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body onload="searchWeatherAndMap()">
+    <header>
+        <div class="nav container">
+            <a href="/blogShow.html" class="logo">Apollo B<span>log</span></a>
+            <li class="navbar">
+                <a href="/blogShow.html">Home</a>
+                <a href="/map.html">Map</a>
+                <a href="/contact.html">Contact</a>
+            </li>
+            <a href="/blogContentAdd.html" class="editor">
+                <i class='bx bx-edit'></i>
+            </a>
+            <button id="logoutButton" class="login">Logout</button>
+        </div>
+    </header>
+
+    <div class="main">
+
+        <div class="left" id="search_area">
+
+            <h2>Weather Forecast</h2>
+            <br>
+            <input type="text" value="Istanbul, Turkey" id="locationInput">
+            <button id="checkButton" onclick="searchWeatherAndMap()">Check!</button>
+
+        </div>
+
+        <div class="right" id="map">
+            <iframe id="mapFrame" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        </div>
+
+        <div id="weather-forecast">
+
+            <h3>Current weather:</h3>
+            <div id="weather-results-container-curr">
+                <p>Enter the city for checking weather</p>
+            </div>
+            <h3>Weather in this area for the next 3 days:</h3>
+            <div id="weather-results-container"></div>
+        </div>
+
+    </div>
+
+    <section class="footer">
+        <div class="links">
+            <a href="/blogShow.html">Home</a>
+            <a href="/map.html">Map</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+        <p>&copy; 2024 Blog App. All rights reserved.</p>
+    </section>
+
+
+    <script src="/js/map.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_MAPS_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+
+        }
+
+        function searchWeatherAndMap() {
+            var locationInput = document.getElementById("locationInput").value;
+
+            var mapFrame = document.getElementById("mapFrame");
+            mapFrame.src = "https://www.google.com/maps?q=" + encodeURIComponent(locationInput) + "&output=embed";
+        }
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"; import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"; import { getFirestore, collection, getDocs }
+        from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"; const firebaseConfig = { apiKey: "AIzaSyDfUfWDEkeVLGyMiRUxlPeiLUT1b-EwOBI", authDomain: "yeni-2e76c.firebaseapp.com", projectId: "yeni-2e76c", storageBucket: "yeni-2e76c.appspot.com",
+        messagingSenderId: "470310024312", appId: "1:470310024312:web:1a6dc5f5256e09d91ce98d", measurementId: "G-GGPZVP4944" }; const app = initializeApp(firebaseConfig); const auth = getAuth(app); const db = getFirestore(app); onAuthStateChanged(auth,
+        (user) => { if (!user) { document.getElementById('logoutButton').style.display = 'none'; } else { updateBlogList(); document.getElementById('logoutButton').style.display = 'block'; } }); document.getElementById('logoutButton').addEventListener('click',
+        () => { signOut(auth).then(() => { window.location.href = 'login.html'; }).catch((error) => { console.error('Çıkış Yaparken Hata Oluştu', error); }); });
+    </script>
+
+</body>
+<!-- Include the Google Maps JavaScript API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+
+</html>
